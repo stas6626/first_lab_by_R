@@ -39,4 +39,16 @@
 > fn=rep("fn",times=30)
 > paste(fn,num,sep="")
 
-###############6#################
+###############7#################
+> d=seq(1,39,2)
+> u=seq(0,38,2)
+> u[1]=1
+> for(i in 2:19){
++     buffer=1;
++     for(j in 2:i){
++         buffer=buffer*(u[i]/d[i]);
++         
++     }    
++     suma=suma+buffer
++ }
+> suma=suma+1 #12.1558711...
