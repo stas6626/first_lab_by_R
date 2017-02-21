@@ -53,48 +53,34 @@
 > sum((exp(1)^(-Xvec[2:250]))/(Xvec[1:249]+10))
 
 ################7#################
-> for (i in 1:250){
-+     if(Yvec[i]>600){cat(Yvec[i]," ")}    
-+ }
+> vecY[(vecY>600)]
 
-> for (i in 1:250){
-+     if(Yvec[i]>600){cat(i," ")}   
-+ }
+> which(vecY>600)
 
-> for (i in 1:250){
-+     if((Yvec[i]>600) &&(Xvec[i]>600)){cat(i," ")} 
-+ }
+> vecX[which(vecY>600)]
 
-> xline=sum(Xvec)/250
-> vec1=abs(Xvec-xline)^0.5
+> dtask=mean(vecX[1:250])
+> vec1=abs(vecX-xline)^0.5
 
-suma=0
-> Xmax=max(Xvec)
-> for (i in 1:250){
-+    if((Xmax-Xvec[i]<201)){suma=suma+1}   
-+ }
+> e=max(vecY)
+> z=vecY[vecY>=e-200]
+> len(z)
 
-> suma=0
-> for (i in 1:250){
-+     if((Xvec[i]%%2)==1){suma=suma+1}
-+ 
-+ }
-> cat(suma,"ne chetnie")
-121 ne chetnie
-> cat(250-suma,"chetnie")
-129 chetnie
-> suma=0
-> for (i in 1:250){
-+     if((Xvec[i]%%7)==0){suma=suma+1}
-+ }
+> f=vecX[vecX%%2==0]
+> length(f)
 
-> for(i in 1:84){
-+     cat(Yvec[i*3-2]," ")   
-+ }
+> 250-length(f)
+> f=vecX[vecX%%7==0]
+> length(f)
 
-cat(sort(Xvec)[250:241],"")
+> vecX[sort(vecY)]
 
-unique(Xvec)
+> h=seq(1,250,by=5)
+> vecY[h]
+
+> cat(sort(Xvec)[250:241],"")
+
+> unique(Xvec)
 
 ###############8#################
 > d=seq(1,39,2)
