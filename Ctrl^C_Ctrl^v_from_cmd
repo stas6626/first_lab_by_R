@@ -11,14 +11,20 @@
 > g=c(g4,g6,g3)
 > j=2^tmp
 > j1=rep(j,times=4) #8 раз
+> k=grep(6,j1)
+> length(k)
 
 ###########2###########
-> x=seq(3,6,0.1)
-> sum(exp(1)^x*cos(x))
+> x=seq(3,6,0.1);
+> y=exp(x)*cos(x);	 
+> mean(y);
 
 ##########3#########
-> em=c(3,4)
-> for (i in 1:12){em[2*i-1]=0.1^(3*i); em[2*i]=0.2^((3*i)-2);}
+> a=c(0.1);
+> v=c(0.2);
+> x=seq(3,36,3);
+> y=seq(1,34,3);
+> d=c(a^x*v^y);d
 
 > dva=1:25
 > 2^dva/dva
@@ -41,10 +47,10 @@
 > paste(fn,num,sep="")
 
 ###############6##################
-> Xvec=sample(0:999,250)
-> Yvec=sample(0:999,250)
+> Xvec=sample(0:999,250,replace=TRUE)
+> Yvec=sample(0:999,250,replace=TRUE)
 
-> Yvec[1:249]-Xvec[2:250]
+> Xvec[1:249]-Yvec[2:250]
 
 > sin(Yvec[1:249])-cos(Xvec[2:250])
 
@@ -60,38 +66,25 @@
 > vecX[which(vecY>600)]
 
 > dtask=mean(vecX[1:250])
-> vec1=abs(vecX-xline)^0.5
+> vec1=abs(vecX[1:250]-dtask)^0.5
 
 > e=max(vecY)
 > z=vecY[vecY>=e-200]
 > len(z)
 
-> f=vecX[vecX%%2==0]
-> length(f)
+> vecX[order(vecY)]  		
 
-> 250-length(f)
-> f=vecX[vecX%%7==0]
-> length(f)
+> dd=seq(1,250,by=3)
+> vecY[dd]
 
-> vecX[sort(vecY)]
+> cc=rev(sort(vecX)) 
+> unique(cc)
+> i1=(cc[1:10])
 
-> h=seq(1,250,by=5)
-> vecY[h]
-
-> cat(sort(Xvec)[250:241],"")
-
-> unique(Xvec)
+> table(vecX)
+> nPov=unique(vecX)
 
 ###############8#################
-> d=seq(1,39,2)
-> u=seq(0,38,2)
-> u[1]=1
-> for(i in 2:19){
-+     buffer=1;
-+     for(j in 2:i){
-+         buffer=buffer*(u[i]/d[i]);
-+         
-+     }    
-+     suma=suma+buffer
-+ }
-> suma=suma+1 #12.1558711...
+> a=c(seq(2,38,by=2))
+> c=c(seq(3,39,by=2))
+> s=sum(cumprod(a/c))+1
